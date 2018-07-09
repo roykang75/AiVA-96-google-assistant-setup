@@ -48,9 +48,9 @@ while [[ -z $UploadClientSecret ]] ; do
 done
 
 echo "--------------------------------------"
-echo "$UploadClientSecret,,"
+echo ${UploadClientSecret,,}
 
-if [ "$UploadClientSecret,," == "no" ]; then
+if [ ${UploadClientSecret,,} == "no" ]; then
     echo "You should upload client_secret.json. try again."
     trap - ERR
 fi
