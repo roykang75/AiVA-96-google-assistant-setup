@@ -36,7 +36,7 @@ sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 
 echo "========== Setup vsftpd ==========="
 sudo cp ./configurations/vsftpd.conf /etc/vsftpd.conf
-echo $USER | sudo tee -a /etc/vsftpd.chroot_list
+echo $USER | sudo tee -a /etc/vsftpd.chroot_list >> /dev/null
 sudo systemctl restart vsftpd
 
 echo "========== Please client-secrets file to AiVA-96-google-assistant-setup folder on Dragon Board 410c using ftp client ==========="
@@ -52,7 +52,7 @@ echo "$UploadClientSecret,,"
 
 if [ "$UploadClientSecret,," == "no" ]; then
     echo "You should upload client_secret.json. try again."
-    exit 0;
+    trap - ERR
 fi
 
 echo "========== Upgrade setuptools and oauthlib =========="
