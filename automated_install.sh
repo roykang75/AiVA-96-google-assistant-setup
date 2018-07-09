@@ -1,10 +1,6 @@
 #!/bin/bash
 
 # Preconfigured variables
-while [[ -z $ClientSecret ]] ; do
-    echo "Enter your ClientSecret Path:"
-    read ClientSecret
-done
 
 echo ""
 echo ""
@@ -32,11 +28,32 @@ sudo apt-get update
 sudo apt-get upgrade -y
 
 echo "========== Installing python3 and Libraries ==========="
-sudo apt-get install -y nano vim
+sudo apt-get install -y nano vim vsftpd
 sudo apt-get install -y python3 python3-dev python-dev python3-venv python-serial
 sudo apt-get upgrade python3
 sudo apt-get install -y autoconf build-essential libtool libtool-bin pkg-config automake libpcre3-dev mpg123
 sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
+
+echo "========== Setup vsftpd ==========="
+sudo cp /configurations/vsftpd.conf /etc/vsftpd.conf
+echo $USER | sudo tee -a /etc/vsftpd.chroot_list
+sudo systemctl restart vsftpd
+
+echo "========== Please client-secrets file to AiVA-96-google-assistant-setup folder on Dragon Board 410c using ftp client ==========="
+echo "********** You should rename client_secret_XXX.json to client_secret.json **********"
+echo "========== and then input 'Yes'"
+while [[ -z $UploadClientSecret ]] ; do
+    echo "Did you upload client-secrets ?"
+    read UploadClientSecret
+done
+
+echo "--------------------------------------"
+echo "$UploadClientSecret,,"
+
+if [ "$UploadClientSecret,," == "no" ]; then
+    echo "You should upload client_secret.json. try again."
+    exit 0;
+fi
 
 echo "========== Upgrade setuptools and oauthlib =========="
 python3 -m venv env
