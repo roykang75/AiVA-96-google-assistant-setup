@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Preconfigured variables
-client_secrets="client_secret.json"
+client_secret="client_secret.json"
+Origin=$(pwd)
+client_secret_Loc=$Origin/$client_secret
 
 echo ""
 echo ""
@@ -54,7 +56,7 @@ if [ ${UploadClientSecret,,} == "no" ]; then
     exit -1
 fi
 
-if [ -f "$client_secret" ]; then
+if [ -f $client_secret_Loc ]; then
     echo "client_secret.json found."
 else
     echo "client_secret.json doesn't found."
