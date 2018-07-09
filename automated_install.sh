@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # Preconfigured variables
-client-secrets="client_secret.json"
-
+client_secrets="client_secret.json"
 
 echo ""
 echo ""
@@ -55,7 +54,7 @@ if [ ${UploadClientSecret,,} == "no" ]; then
     exit -1
 fi
 
-if [ -f "$client-secrets" ]; then
+if [ -f "$client_secret" ]; then
     echo "client_secret.json found."
 else
     echo "client_secret.json doesn't found."
