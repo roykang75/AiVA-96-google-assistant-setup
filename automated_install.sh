@@ -35,12 +35,12 @@ sudo apt-get install -y autoconf build-essential libtool libtool-bin pkg-config 
 sudo apt-get install -y portaudio19-dev libffi-dev libssl-dev
 
 echo "========== Setup vsftpd ==========="
-sudo cp /configurations/vsftpd.conf /etc/vsftpd.conf
+sudo cp ./configurations/vsftpd.conf /etc/vsftpd.conf
 echo $USER | sudo tee -a /etc/vsftpd.chroot_list
 sudo systemctl restart vsftpd
 
 echo "========== Please client-secrets file to AiVA-96-google-assistant-setup folder on Dragon Board 410c using ftp client ==========="
-echo "********** You should rename client_secret_XXX.json to client_secret.json **********"
+echo "           ( You should rename client_secret_XXX.json to client_secret.json )"
 echo "========== and then input 'Yes'"
 while [[ -z $UploadClientSecret ]] ; do
     echo "Did you upload client-secrets ?"
@@ -62,7 +62,7 @@ source env/bin/activate
 python -m pip install --upgrade google-auth-oauthlib[tool]
 
 echo "========== Progress oAuth =========="
-google-oauthlib-tool --client-secrets $ClientSecret --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
+google-oauthlib-tool --client-secrets client_secret.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
 
 echo "========== Install gRPC and download Google Assistant SDK =========="
 python -m pip install grpcio grpcio-tools
