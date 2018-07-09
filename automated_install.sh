@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # Preconfigured variables
+client-secrets="client_secret.json"
+
 
 echo ""
 echo ""
@@ -47,12 +49,18 @@ while [[ -z $UploadClientSecret ]] ; do
     read UploadClientSecret
 done
 
-echo "--------------------------------------"
-echo ${UploadClientSecret,,}
-
 if [ ${UploadClientSecret,,} == "no" ]; then
     echo "You should upload client_secret.json. try again."
     trap - ERR
+    exit -1
+fi
+
+if [ -f "$client-secrets" ]; then
+    echo "client_secret.json found."
+else
+    echo "client_secret.json doesn't found."
+    trap - ERR
+    exit -1 
 fi
 
 echo "========== Upgrade setuptools and oauthlib =========="
