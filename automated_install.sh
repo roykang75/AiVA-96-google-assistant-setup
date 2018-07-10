@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Preconfigured variables
-client_secret="client_secret.json"
+credentials="credentials.json"
 Origin=$(pwd)
-client_secret_Loc=$Origin/$client_secret
+credentials_Loc=$Origin/$credentials
 
 echo ""
 echo ""
@@ -42,24 +42,23 @@ sudo cp ./configurations/vsftpd.conf /etc/vsftpd.conf
 echo $USER | sudo tee -a /etc/vsftpd.chroot_list >> /dev/null
 sudo systemctl restart vsftpd
 
-echo "========== Please client-secrets file to AiVA-96-google-assistant-setup folder on Dragon Board 410c using ftp client ==========="
-echo "           ( You should rename client_secret_XXX.json to client_secret.json )"
+echo "========== Please credentials.json file to AiVA-96-google-assistant-setup folder on Dragon Board 410c using ftp client ==========="
 echo "========== and then input 'Yes'"
-while [[ -z $UploadClientSecret ]] ; do
-    echo "Did you upload client-secrets ?"
-    read UploadClientSecret
+while [[ -z $IsUploadCredentials ]] ; do
+    echo "Did you upload credentials.json ?"
+    read IsUploadCredentials
 done
 
 if [ ${UploadClientSecret,,} == "no" ]; then
-    echo "You should upload client_secret.json. try again."
+    echo "You should upload credentials.json. try again."
     trap - ERR
     exit -1
 fi
 
-if [ -f $client_secret_Loc ]; then
-    echo "client_secret.json found."
+if [ -f $credentials_Loc ]; then
+    echo "credentials.json found."
 else
-    echo "client_secret.json doesn't found."
+    echo "credentials.json doesn't found."
     trap - ERR
     exit -1 
 fi
@@ -78,7 +77,7 @@ python -m pip install grpcio grpcio-tools
 python -m pip install --upgrade google-assistant-sdk[samples]
 
 echo "========== Regist device model =========="
-googlesamples-assistant-devicetool --project-id lofty-ivy-192309 register-model --manufacturer "Assistant SDK developer" --product-name "Assistant SDK light" --type LIGHT --model roy-model
+googlesamples-assistant-devicetool --project-id lofty-ivy-192309 register-model --manufacturer "Assistant SDK developer" --product-name "Assistant SDK Speaker" --type LIGHT --model roy-model
 googlesamples-assistant-devicetool --project-id lofty-ivy-192309 list --model
 git clone https://github.com/googlesamples/assistant-sdk-python
 cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
