@@ -49,7 +49,7 @@ while [[ -z $IsUploadCredentials ]] ; do
     read IsUploadCredentials
 done
 
-if [ ${UploadClientSecret,,} == "no" ]; then
+if [ ${IsUploadCredentials,,} == "no" ]; then
     echo "You should upload credentials.json. try again."
     trap - ERR
     exit -1
