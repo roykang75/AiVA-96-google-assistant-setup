@@ -5,6 +5,14 @@ credentials="credentials.json"
 Origin=$(pwd)
 credentials_Loc=$Origin/$credentials
 
+
+while [[ -z $ProjectID ]] ; do
+    echo "ProjectID : "
+    read ProjectID
+done
+
+
+
 echo ""
 echo ""
 echo "==============================="
@@ -70,7 +78,7 @@ source env/bin/activate
 python -m pip install --upgrade google-auth-oauthlib[tool]
 
 echo "========== Progress oAuth =========="
-google-oauthlib-tool --client-secrets client_secret.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
+google-oauthlib-tool --client-secrets credentials.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
 
 echo "========== Install gRPC and download Google Assistant SDK =========="
 python -m pip install grpcio grpcio-tools
