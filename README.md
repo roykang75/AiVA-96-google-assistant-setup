@@ -46,7 +46,7 @@ Brief instructions and additional notes are below:
     + Configure a Developer Project and Account Settings
     https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account?hl=en
 
-    + Register the Device Model
+    + Register the Device Model  
     https://developers.google.com/assistant/sdk/guides/library/python/embed/register-device?hl=en  
     (Download credentials file to Local PC. (Don't transfer it to device, yet))
 
