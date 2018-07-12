@@ -51,9 +51,11 @@ Brief instructions and additional notes are below:
     (Download credentials file to Local PC. (Don't transfer it to device, yet))
 
 4. Run the installation script
+
+5. Manual run Google Assistant
     ```
-    cd AiVA-96-google-assistant-setup/
-    bash automated_install.sh
+    cd new-project
+    python -m pushtotalk --project-id $ProjectID --device-model-id $DeviceModelID
     ```
 
 See [Project ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ProjectID.md)  
