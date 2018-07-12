@@ -50,12 +50,11 @@ Brief instructions and additional notes are below:
     https://developers.google.com/assistant/sdk/guides/library/python/embed/register-device?hl=en  
     (Download credentials file to Local PC. (Don't transfer it to device, yet))
 
-
-Run the installation script: 
-```
-cd AiVA-96-google-assistant-setup/
-bash automated_install.sh
-```
+4. Run the installation script
+    ```
+    cd AiVA-96-google-assistant-setup/
+    bash automated_install.sh
+    ```
 
 See [Project ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ProjectID.md)  
 See [Device Model ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ModelID.md)
