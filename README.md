@@ -51,6 +51,10 @@ Brief instructions and additional notes are below:
     (Download credentials file to Local PC. (Don't transfer it to device, yet))
 
 4. Run the installation script
+    ```
+    cd AiVA-96-google-assistant-setup/
+    bash automated_install.sh
+    ```
 
 5. Manual run Google Assistant
     ```
