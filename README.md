@@ -43,10 +43,10 @@ Brief instructions and additional notes are below:
     ```
 
 3. Create a new Google Assistant Project and Device by following
-    - Configure a Developer Project and Account Settings
+    + Configure a Developer Project and Account Settings
     https://developers.google.com/assistant/sdk/guides/library/python/embed/config-dev-project-and-account?hl=en
 
-    - Register the Device Model
+    + Register the Device Model
     https://developers.google.com/assistant/sdk/guides/library/python/embed/register-device?hl=en  
     (Download credentials file to Local PC. (Don't transfer it to device, yet))
 
@@ -57,5 +57,5 @@ cd AiVA-96-google-assistant-setup/
 bash automated_install.sh
 ```
 
-See [Project ID](./ProjectId.md)  
-See [Device Model ID](./ModelId.md)
+See [Project ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ProjectID.md)  
+See [Device Model ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ModelID.md)
