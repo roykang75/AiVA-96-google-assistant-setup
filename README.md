@@ -57,5 +57,5 @@ cd AiVA-96-google-assistant-setup/
 bash automated_install.sh
 ```
 
-[See Project ID](./ProjectId.md)  
-[See Device Model ID](./ModelId.md)
+See [Project ID](./ProjectId.md)  
+See [Device Model ID](./ModelId.md)
