@@ -84,7 +84,8 @@ echo "========== Progress oAuth =========="
 google-oauthlib-tool --client-secrets credentials.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
 
 echo "========== Install gRPC and download Google Assistant SDK =========="
-python -m pip install grpcio grpcio-tools
+python -m pip install grpcio
+python -m pip install grpcio-tools
 python -m pip install --upgrade google-assistant-sdk[samples]
 
 echo "========== Regist device model =========="
