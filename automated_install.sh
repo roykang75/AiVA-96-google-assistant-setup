@@ -97,18 +97,21 @@ cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new
 chmod +x *.sh
 cp pushtotalk.py ./new-project/
 
-echo "#!/bin/bash" | tee -a ~/run_google_assistant_en.sh > /dev/null
-echo "python3 -m venv env" | tee -a ~/run_google_assistant_en.sh > /dev/null
-echo "source env/bin/activate" | tee -a ~/run_google_assistant_en.sh > /dev/null
-echo "cd new-project" | tee -a ~/run_google_assistant_en.sh > /dev/null
-echo "python -m pushtotalk --project-id  $ProjectID --device-model-id $DeviceModelID --lang us-en" | tee -a ~/run_google_assistant_en.sh > /dev/null
+echo "#!/bin/bash" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "python3 -m venv env" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "source env/bin/activate" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "cd new-project" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "python -m pushtotalk --project-id  $ProjectID --device-model-id $DeviceModelID --lang en-us" | tee -a ./run_google_assistant_en.sh > /dev/null
 
+chmod +x ./run_google_assistant_en.sh
 
 echo ""
-echo '============================='
-echo '*****************************'
-echo '========= Finished =========='
-echo '*****************************'
-echo '============================='
+echo '==========================================================================='
+echo '***************************************************************************'
+echo '=============================== Finished =================================='
+echo 'Please run run_google_assistant_en.sh'
+ehco 'If need other language, change --lang option on run_google_assistant_en.sh'
+echo '***************************************************************************'
+echo '==========================================================================='
 echo ""
 
