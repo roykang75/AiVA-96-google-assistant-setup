@@ -56,11 +56,13 @@ Brief instructions and additional notes are below:
     bash automated_install.sh
     ```
 
-5. Manual run Google Assistant
+5. Run Google Assistant
     ```
-    cd new-project
-    python -m pushtotalk --project-id $ProjectID --device-model-id $DeviceModelID
+    cd ~/AiVA-96-google-assistant-setup
+    ./run_google_assistant_en.sh
     ```
+
+    *If need other language, change --lang option on run_google_assistant_en.sh*
 
 See [Project ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ProjectID.md)  
 See [Device Model ID](https://github.com/roykang75/AiVA-96-google-assistant-setup/blob/master/ModelID.md)
