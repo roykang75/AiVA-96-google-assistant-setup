@@ -110,7 +110,7 @@ echo '==========================================================================
 echo '***************************************************************************'
 echo '=============================== Finished =================================='
 echo 'Please run run_google_assistant_en.sh'
-ehco 'If need other language, change --lang option on run_google_assistant_en.sh'
+echo 'If need other language, change --lang option on run_google_assistant_en.sh'
 echo '***************************************************************************'
 echo '==========================================================================='
 echo ""
