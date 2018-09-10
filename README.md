@@ -4,7 +4,7 @@ The AiVA-96 for Google Assistant provides far-field voice capture using the XMOS
 
 Combined with a Dragon Boarad 410c running the Google Assistant Software Development Kit (SDK), this kit allows you to quickly prototype and evaluate talking with Google Assistant.
 
-To find out more, visit: https://wiziot home page  
+To find out more, visit: https://wizeiot.com home page  
 and: https://developers.google.com/assistant/sdk/guides/library/python/?hl=en
 
 This repository provides a simple-to-use automated script to install the Google Assistant SDK on a Dragon Board 410c and configure the Dragon Board 410c to use the AiVA-96 for Google Assistant for audio.
@@ -26,11 +26,11 @@ You will also need an Google account: https://developers.google.com/assistant/sd
 
 Hardware setup
 ---
-Setup your hardware by following the Hardware Setup at: https://wiziot home page
+Setup your hardware by following the Hardware Setup at: https://wizeiot.com home page
 
 Google Assistant SDK installation and Dragon Board 410c audio setup
 ---
-Full instructions to install the Google Assistant SDK on to a Dragon Board 410c and configure the audio to use the AiVA-96 are detailed in the Getting Started Guide available from: https://wiziot home page.
+Full instructions to install the Google Assistant SDK on to a Dragon Board 410c and configure the audio to use the AiVA-96 are detailed in the Getting Started Guide available from: https://wizeiot.com home page.
 
 Brief instructions and additional notes are below:
 
