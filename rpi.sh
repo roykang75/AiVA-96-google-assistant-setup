@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "========== Installing python3 and Libraries ==========="
-sudo apt-get install -y vim vsftpd
+sudo apt-get install -y vim vsftpd pulseaudio
 sudo apt-get install portaudio19-dev libffi-dev libssl-dev libmpg123-dev
 sudo apt-get install -y python3 python3-dev python3-venv
 python3 -m venv env
@@ -47,18 +47,17 @@ echo "========== Regist device model =========="
 #googlesamples-assistant-devicetool --project-id $ProjectID list --model
 #git clone https://github.com/googlesamples/assistant-sdk-python
 #cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
-googlesamples-assistant-hotword --project_id $ProjectID --device_model_id $DeviceModelID
+#googlesamples-assistant-hotword --project_id $ProjectID --device_model_id $DeviceModelID
 
 #chmod +x *.sh
 #cp pushtotalk.py ./new-project/
 
-#echo "#!/bin/bash" | tee -a ./run_google_assistant_en.sh > /dev/null
-#echo "python3 -m venv env" | tee -a ./run_google_assistant_en.sh > /dev/null
-#echo "source env/bin/activate" | tee -a ./run_google_assistant_en.sh > /dev/null
-#echo "cd new-project" | tee -a ./run_google_assistant_en.sh > /dev/null
-#echo "python -m pushtotalk --project-id  $ProjectID --device-model-id $DeviceModelID --lang en-us" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "#!/bin/bash" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "python3 -m venv env" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "source env/bin/activate" | tee -a ./run_google_assistant_en.sh > /dev/null
+echo "googlesamples-assistant-hotword --project_id  $ProjectID --device-model-id $DeviceModelID --lang en-us" | tee -a ./run_google_assistant_en.sh > /dev/null
 
-#chmod +x ./run_google_assistant_en.sh
+chmod +x ./run_google_assistant_en.sh
 
 echo ""
 echo '==========================================================================='
