@@ -46,7 +46,7 @@ get_platform() {
 
   if [[ "$uname_str" ==  "Linux raspberrypi"* ]]
   then
-    result="pi"
+    result="rpi"
   elif [[ "$uname_str" ==  "MINGW64"* ]]
   then
     result="mingw64"
@@ -61,9 +61,9 @@ get_platform() {
 get_platform
 PLATFORM=$result
 
-if [ "$PLATFORM" == "pi" ]
+if [ "$PLATFORM" == "rpi" ]
 then
-  source pi.sh
+  source rpi.sh
 #elif [ "$PLATFORM" == "mingw64" ]
 #then
 #  source mingw.sh
