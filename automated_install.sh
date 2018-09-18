@@ -41,7 +41,7 @@ echo "========== Update Aptitude ==========="
 sudo apt-get update
 sudo apt-get upgrade -y
 
-et_platform() {
+get_platform() {
   uname_str=`uname -a`
 
   if [[ "$uname_str" ==  "Linux raspberrypi"* ]]
