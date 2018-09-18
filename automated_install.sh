@@ -63,7 +63,7 @@ PLATFORM=$result
 
 if [ "$PLATFORM" == "pi" ]
 then
-  source pi.sh
+  source rpi.sh
 #elif [ "$PLATFORM" == "mingw64" ]
 #then
 #  source mingw.sh
