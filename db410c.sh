@@ -40,7 +40,8 @@ source env/bin/activate
 python -m pip install --upgrade google-auth-oauthlib[tool]
 
 echo "========== Progress oAuth =========="
-google-oauthlib-tool --client-secrets credentials.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
+#google-oauthlib-tool --client-secrets credentials.json --scope https://www.googleapis.com/auth/assistant-sdk-prototype --save --headless
+google-oauthlib-tool --scope https://www.googleapis.com/auth/assistant-sdk-prototype --scope https://www.googleapis.com/auth/gcm --save --headless --client-secrets /home/pi/credentials.json
 
 echo "========== Install gRPC and download Google Assistant SDK =========="
 python -m pip install grpcio
