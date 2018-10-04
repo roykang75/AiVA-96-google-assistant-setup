@@ -55,7 +55,7 @@ git clone https://github.com/googlesamples/assistant-sdk-python
 cp -r assistant-sdk-python/google-assistant-sdk/googlesamples/assistant/grpc new-project
 
 chmod +x *.sh
-#cp pushtotalk.py ./new-project/
+cp pushtotalk.py ./new-project/
 
 echo "#!/bin/bash" | tee -a ./run_google_assistant_en.sh > /dev/null
 echo "python3 -m venv env" | tee -a ./run_google_assistant_en.sh > /dev/null
